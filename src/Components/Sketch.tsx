@@ -1,5 +1,6 @@
 import React from "react";
 import { RouteComponentProps } from "@reach/router";
+import "./Sketch.css";
 
 interface SketchProps extends RouteComponentProps {
   props?: any;
@@ -15,11 +16,15 @@ export default class Sketch extends React.Component<SketchProps> {
   componentDidMount() {
     const node = this.ref.current;
     if (node) {
-      node.width = 300;
-      node.height = 300;
+      node.width = 800;
+      node.height = 800;
     }
   }
   render() {
-    return <canvas ref={this.ref} />;
+    return (
+      <div className="canvas-wrapper">
+        <canvas ref={this.ref} />
+      </div>
+    );
   }
 }

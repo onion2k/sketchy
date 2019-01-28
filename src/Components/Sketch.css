@@ -1,0 +1,17 @@
+.canvas-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+canvas {
+  border: 1px solid #888;
+  width: 800px;
+  height: 800px;
+}
+
+.ui {
+  border-top: 1px solid #000;
+}
