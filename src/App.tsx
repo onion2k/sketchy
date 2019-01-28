@@ -20,7 +20,7 @@ interface DashboardProps extends RouteComponentProps {
   path: string;
 }
 
-class Dashboard extends React.Component<HomeProps> {
+class Dashboard extends React.Component<DashboardProps> {
   render() {
     return (
       <div>
