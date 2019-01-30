@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Router } from "@reach/router";
 import Home from "./Components/Home";
 import Header from "./Components/Header";
 import Sketch from "./Components/Sketch";
-import ExtendedSketch from "./Components/extSketch";
 import "./App.css";
+
+const ExtendedSketch = React.lazy(() => import("./Components/extSketch"));
 
 class App extends React.Component {
   render() {
@@ -12,11 +13,13 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <div className="App-Content">
-          <Router>
-            <Home path="/" />
-            <Sketch path="sketch" />
-            <ExtendedSketch path="extendedSketch" />
-          </Router>
+          <Suspense fallback={<div>Waiting</div>}>
+            <Router>
+              <Home path="/" />
+              <Sketch path="sketch" />
+              <ExtendedSketch path="extendedSketch" />
+            </Router>
+          </Suspense>
         </div>
       </div>
     );

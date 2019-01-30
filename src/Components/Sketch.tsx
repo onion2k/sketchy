@@ -9,40 +9,49 @@ interface SketchProps extends RouteComponentProps {
 
 interface SketchState {
   canvasElementRef: RefObject<HTMLCanvasElement>;
-  requestAnimationFrameCancel: any;
   context: CanvasRenderingContext2D | null;
 }
 
 export default class Sketch extends React.Component<SketchProps, SketchState> {
   private canvasElementRef = React.createRef<HTMLCanvasElement>();
+  private requestAnimationFrameCancel: number = 0;
+  public frame: number = 0;
   constructor(props?: any) {
     super(props);
     this.state = {
       canvasElementRef: this.canvasElementRef,
-      requestAnimationFrameCancel: null,
       context: null
     };
+    this.frame = 0;
+    this.loop = this.loop.bind(this);
     this.renderSketch = this.renderSketch.bind(this);
   }
-  renderSketch() {
-    if (this.state.context) {
-      this.state.context.fillStyle = "rgb(192,255,255)";
-      this.state.context.fillRect(0, 0, 800, 800);
+  renderSketch(context: CanvasRenderingContext2D) {
+    if (context) {
+      context.fillStyle = "rgb(192,255,255)";
+      context.fillRect(0, 0, 800, 800);
     }
   }
+  loop() {
+    this.frame++;
+    if (this.state.context) {
+      this.renderSketch(this.state.context);
+    }
+    this.requestAnimationFrameCancel = requestAnimationFrame(this.loop);
+  }
   componentDidMount() {
-    const node = this.canvasElementRef.current;
-    if (node) {
-      node.width = 800;
-      node.height = 800;
-      this.setState({ context: node.getContext("2d") }, () => {
-        requestAnimationFrame(this.renderSketch);
+    const canvasElement = this.canvasElementRef.current;
+    if (canvasElement) {
+      canvasElement.width = 800;
+      canvasElement.height = 800;
+      this.setState({ context: canvasElement.getContext("2d") }, () => {
+        this.requestAnimationFrameCancel = requestAnimationFrame(this.loop);
       });
     }
   }
   componentWillUnmount() {
-    if (this.state.requestAnimationFrameCancel) {
-      cancelAnimationFrame(this.state.requestAnimationFrameCancel);
+    if (this.requestAnimationFrameCancel) {
+      cancelAnimationFrame(this.requestAnimationFrameCancel);
     }
   }
   render() {
