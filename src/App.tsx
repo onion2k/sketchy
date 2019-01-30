@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { Router, Link, RouteComponentProps } from "@reach/router";
+import React from "react";
+import { Router } from "@reach/router";
 import Home from "./Components/Home";
 import Header from "./Components/Header";
 import Sketch from "./Components/Sketch";
 import ExtendedSketch from "./Components/extSketch";
 import "./App.css";
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
