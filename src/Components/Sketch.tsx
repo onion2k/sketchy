@@ -1,4 +1,4 @@
-import React from "react";
+import React, { RefObject } from "react";
 import { RouteComponentProps } from "@reach/router";
 import "./Sketch.css";
 
@@ -7,23 +7,37 @@ interface SketchProps extends RouteComponentProps {
   path: string;
 }
 
-export default class Sketch extends React.Component<SketchProps> {
-  private ref = React.createRef<HTMLCanvasElement>();
+interface SketchState {
+  canvasElementRef: RefObject<HTMLCanvasElement>;
+  requestAnimationFrameCancel: any;
+}
+
+export default class Sketch extends React.Component<SketchProps, SketchState> {
+  private canvasElementRef = React.createRef<HTMLCanvasElement>();
+
   constructor(props?: any) {
     super(props);
-    this.state = { ref: this.ref };
+    this.state = {
+      canvasElementRef: this.canvasElementRef,
+      requestAnimationFrameCancel: null
+    };
   }
   componentDidMount() {
-    const node = this.ref.current;
+    const node = this.canvasElementRef.current;
     if (node) {
       node.width = 800;
       node.height = 800;
     }
   }
+  componentWillUnmount() {
+    if (this.state.requestAnimationFrameCancel) {
+      cancelAnimationFrame(this.state.requestAnimationFrameCancel);
+    }
+  }
   render() {
     return (
       <div className="canvas-wrapper">
-        <canvas ref={this.ref} />
+        <canvas ref={this.canvasElementRef} />
       </div>
     );
   }
