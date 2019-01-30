@@ -3,6 +3,7 @@ import { Router, Link, RouteComponentProps } from "@reach/router";
 import Home from "./Components/Home";
 import Header from "./Components/Header";
 import Sketch from "./Components/Sketch";
+import ExtendedSketch from "./Components/extSketch";
 import "./App.css";
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
           <Router>
             <Home path="/" />
             <Sketch path="sketch" />
+            <ExtendedSketch path="extendedSketch" />
           </Router>
         </div>
       </div>
