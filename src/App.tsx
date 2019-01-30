@@ -5,7 +5,7 @@ import Header from "./Components/Header";
 import Sketch from "./Components/Sketch";
 import "./App.css";
 
-const ExtendedSketch = React.lazy(() => import("./Components/extSketch"));
+const ExtendedSketch = React.lazy(() => import("./Sketches/extSketch"));
 
 class App extends React.Component {
   render() {

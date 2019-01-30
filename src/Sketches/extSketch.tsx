@@ -1,4 +1,4 @@
-import Sketch from "./Sketch";
+import Sketch from "../Components/Sketch";
 
 export default class extendedSketch extends Sketch {
   renderSketch(context: CanvasRenderingContext2D) {
