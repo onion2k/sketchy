@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <div className="App-Content">
+        <div className="App-Sketch">
           <Suspense fallback={<div>Waiting</div>}>
             <Router>
               <Home path="/" />
@@ -21,6 +21,7 @@ class App extends React.Component {
             </Router>
           </Suspense>
         </div>
+        <div className="App-Controls">Controls</div>
       </div>
     );
   }

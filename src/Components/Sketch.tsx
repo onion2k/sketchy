@@ -24,9 +24,9 @@ export default class Sketch extends React.Component<SketchProps, SketchState> {
     };
     this.frame = 0;
     this.loop = this.loop.bind(this);
-    this.renderSketch = this.renderSketch.bind(this);
+    this.draw = this.draw.bind(this);
   }
-  renderSketch(context: CanvasRenderingContext2D) {
+  draw(context: CanvasRenderingContext2D) {
     if (context) {
       context.fillStyle = "rgb(192,255,255)";
       context.fillRect(0, 0, 800, 800);
@@ -35,7 +35,7 @@ export default class Sketch extends React.Component<SketchProps, SketchState> {
   loop() {
     this.frame++;
     if (this.state.context) {
-      this.renderSketch(this.state.context);
+      this.draw(this.state.context);
     }
     this.requestAnimationFrameCancel = requestAnimationFrame(this.loop);
   }
