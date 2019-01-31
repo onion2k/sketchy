@@ -12,10 +12,17 @@ interface SketchState {
   context: CanvasRenderingContext2D | null;
 }
 
+export interface interfaceDraw {
+  context: CanvasRenderingContext2D | null;
+  width: number;
+  height: number;
+  frame: number;
+}
+
 export default class Sketch extends React.Component<SketchProps, SketchState> {
   private canvasElementRef = React.createRef<HTMLCanvasElement>();
   private requestAnimationFrameCancel: number = 0;
-  public frame: number = 0;
+  private frame: number = 0;
   constructor(props?: any) {
     super(props);
     this.state = {
@@ -26,7 +33,8 @@ export default class Sketch extends React.Component<SketchProps, SketchState> {
     this.loop = this.loop.bind(this);
     this.draw = this.draw.bind(this);
   }
-  draw(context: CanvasRenderingContext2D) {
+  draw(options: interfaceDraw) {
+    const { context } = options;
     if (context) {
       context.fillStyle = "rgb(192,255,255)";
       context.fillRect(0, 0, 800, 800);
@@ -35,7 +43,12 @@ export default class Sketch extends React.Component<SketchProps, SketchState> {
   loop() {
     this.frame++;
     if (this.state.context) {
-      this.draw(this.state.context);
+      this.draw({
+        context: this.state.context,
+        width: 800,
+        height: 800,
+        frame: this.frame
+      });
     }
     this.requestAnimationFrameCancel = requestAnimationFrame(this.loop);
   }

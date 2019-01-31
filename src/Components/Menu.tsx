@@ -17,6 +17,9 @@ export default class Menu extends React.Component<MenuProps> {
         <li>
           <Link to="extendedSketch">Ext Sketch</Link>
         </li>
+        <li>
+          <Link to="grid1">Grid 1</Link>
+        </li>
       </ul>
     );
   }
