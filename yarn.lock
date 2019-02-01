@@ -9336,6 +9336,11 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
+tooloud@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/tooloud/-/tooloud-2.0.4.tgz#c4a69b9db8e5c1a41bcd936e1941963150b2559f"
+  integrity sha512-54LuvIiX+8TBs3AH7f/dUmrUEO9E9aT4WY9KvsgVHZN7GpejBfPae6qH+a5jaTi9XXlk1C6sYmx4Sib26WkdWA==
+
 topo@2.x.x:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/topo/-/topo-2.0.2.tgz#cd5615752539057c0dc0491a621c3bc6fbe1d182"

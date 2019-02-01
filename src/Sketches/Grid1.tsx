@@ -12,8 +12,8 @@ export default class Grid1 extends Sketch {
     this.lineWidth = 4;
     this.r = 0;
   }
-  draw(options: interfaceDraw) {
-    const { context, width, height, frame } = options;
+  draw(props: interfaceDraw) {
+    const { context, width, height, frame } = props;
     if (context) {
       const xPos = width / this.cells;
       const yPos = height / this.cells;

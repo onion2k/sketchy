@@ -7,6 +7,7 @@ import "./App.css";
 
 const ExtendedSketch = React.lazy(() => import("./Sketches/extSketch"));
 const Grid1 = React.lazy(() => import("./Sketches/Grid1"));
+const Lines1 = React.lazy(() => import("./Sketches/Lines1"));
 
 class App extends React.Component {
   render() {
@@ -20,6 +21,7 @@ class App extends React.Component {
               <Sketch path="sketch" />
               <ExtendedSketch path="extendedSketch" />
               <Grid1 path="grid1" />
+              <Lines1 path="lines1" />
             </Router>
           </Suspense>
         </div>
