@@ -1,8 +1,57 @@
+body {
+  overflow: hidden;
+}
+/*
+.loading {
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  transform: skew(-8deg);
+}
+.left {
+  width: 60vw;
+  background-color: #144afc;
+  border-right: 3px solid #000000;
+  transform: translateX(-10vw) translateY(0);
+}
+.right {
+  width: 60vw;
+  background-color: #fc7c14;
+  border-left: 3px solid #000000;
+  transform: translateX(-10vw) translateY(0);
+}
+.open .left {
+  animation: slideOpenLeft 3s ease-in 1 normal forwards;
+}
+.open .right {
+  animation: slideOpenRight 3s ease-in 1 normal forwards;
+}
+@keyframes slideOpenLeft {
+  0% {
+    transform: translateX(-10vw) translateY(0vh);
+  }
+  100% {
+    transform: translateX(-10vw) translateY(100vh);
+  }
+}
+@keyframes slideOpenRight {
+  0% {
+    transform: translateX(-10vw) translateY(0vh);
+  }
+  100% {
+    transform: translateX(-10vw) translateY(-100vh);
+  }
+} */
+
 .App {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1000px 1fr;
+  grid-template-rows: 75vh 1fr;
   grid-row-gap: 30px;
   grid-template-areas:
     "sidebar sketch"
