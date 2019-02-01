@@ -26,7 +26,7 @@ export default class Lines1 extends Sketch {
 
       const i: number = h * v;
       context.lineWidth = this.lineWidth;
-      context.strokeStyle = `rgb(64,64,64)`;
+      context.strokeStyle = `rgb(255,64,64)`;
 
       for (let x = 0; x < i; x++) {
         let _x: number = x % h;
