@@ -13,6 +13,8 @@ const ExtendedSketch = React.lazy(() => import("./Sketches/extSketch"));
 const Grid1 = React.lazy(() => import("./Sketches/Grid1"));
 const Lines1 = React.lazy(() => import("./Sketches/Lines1"));
 const Lines2 = React.lazy(() => import("./Sketches/Lines2"));
+const Lines3 = React.lazy(() => import("./Sketches/Lines3"));
+const Continuous1 = React.lazy(() => import("./Sketches/Continuous1"));
 
 class App extends React.Component<any, AppState> {
   constructor(props: any) {
@@ -41,6 +43,8 @@ class App extends React.Component<any, AppState> {
                 <Grid1 path="grid1" />
                 <Lines1 path="lines1" />
                 <Lines2 path="lines2" />
+                <Lines3 path="lines3" />
+                <Continuous1 path="continuous1" />
               </Router>
             </Suspense>
           </div>
