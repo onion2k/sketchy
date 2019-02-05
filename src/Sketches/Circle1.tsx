@@ -27,8 +27,11 @@ export default class Grid1 extends Sketch {
 
       if (image) {
         context.save();
-        context.globalAlpha = 0.9;
-        context.translate(h * 0.5 * rx, v * 0.5 * ry);
+        context.globalAlpha = 0.95;
+        context.translate(
+          h * 0.5 * rx + Math.sin(frame * 0.1) * 5,
+          v * 0.5 * ry + Math.sin(frame * 0.1) * 5
+        );
         context.rotate((Math.sin(frame * 0.2) * Math.PI) / 180);
         context.drawImage(
           image,
