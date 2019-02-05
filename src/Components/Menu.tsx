@@ -39,6 +39,9 @@ export default class Menu extends React.Component<MenuProps> {
             <li>
               <Link to="continuous1">Continuous 1</Link>
             </li>
+            <li>
+              <Link to="continuous2">Continuous 2</Link>
+            </li>
           </ul>
         </li>
         <li>

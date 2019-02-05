@@ -15,6 +15,7 @@ const Lines1 = React.lazy(() => import("./Sketches/Lines1"));
 const Lines2 = React.lazy(() => import("./Sketches/Lines2"));
 const Lines3 = React.lazy(() => import("./Sketches/Lines3"));
 const Continuous1 = React.lazy(() => import("./Sketches/Continuous1"));
+const Continuous2 = React.lazy(() => import("./Sketches/Continuous2"));
 const Shapes1 = React.lazy(() => import("./Sketches/Shapes1"));
 
 class App extends React.Component<any, AppState> {
@@ -46,6 +47,7 @@ class App extends React.Component<any, AppState> {
                 <Lines2 path="lines2" />
                 <Lines3 path="lines3" />
                 <Continuous1 path="continuous1" />
+                <Continuous2 path="continuous2" />
                 <Shapes1 path="shapes1" />
               </Router>
             </Suspense>

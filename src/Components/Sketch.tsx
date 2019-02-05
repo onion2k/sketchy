@@ -17,6 +17,7 @@ export interface interfaceDraw {
   width: number;
   height: number;
   frame: number;
+  image: HTMLCanvasElement | null;
 }
 
 export default class Sketch extends React.Component<SketchProps, SketchState> {
@@ -47,7 +48,8 @@ export default class Sketch extends React.Component<SketchProps, SketchState> {
         context: this.state.context,
         width: 800,
         height: 800,
-        frame: this.frame
+        frame: this.frame,
+        image: this.state.canvasElementRef.current
       });
     }
     this.requestAnimationFrameCancel = requestAnimationFrame(this.loop);
