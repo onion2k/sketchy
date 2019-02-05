@@ -13,9 +13,11 @@ export default class Lines1 extends Sketch {
   draw(props: interfaceDraw) {
     const { context, width, height, frame, image } = props;
     if (context) {
+      context.fillStyle = "rgba(255,255,255,0.1)";
+      context.fillRect(0, 0, width, height);
       if (image) {
         context.save();
-        context.globalAlpha = 0.8;
+        context.globalAlpha = 0.5;
         context.drawImage(
           image,
           0,
@@ -44,13 +46,9 @@ export default class Lines1 extends Sketch {
         let _y = Math.floor(x / v);
 
         if (_x === 0 && _y > 0) {
-          context.lineTo(h * rx, (_y - 1) * ry);
-          context.lineTo(h * rx, (_y - 1) * ry + ry * 2.5);
-          context.lineTo(0, (_y - 1) * ry + ry * 2.5);
           context.strokeStyle = `hsl(${_y * 7},100%,50%)`;
           context.stroke();
           context.beginPath();
-          context.moveTo(-20, _y * ry);
         }
 
         const n = tooloud.Perlin.noise(
@@ -67,9 +65,6 @@ export default class Lines1 extends Sketch {
         );
       }
 
-      context.lineTo(h * rx, v * ry + ry * 0.5);
-      context.lineTo(h * rx, v * ry + ry * 2.5);
-      context.lineTo(0, v * ry + ry * 2.5);
       context.strokeStyle = `rgb(${v * 7},64,64)`;
       context.stroke();
     }
