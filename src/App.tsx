@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Router } from "@reach/router";
 import Home from "./Components/Home";
-import Header from "./Components/Header";
+import Sidebar from "./Components/Sidebar";
 import Sketch from "./Components/Sketch";
 import "./App.css";
 
@@ -17,6 +17,7 @@ const Lines3 = React.lazy(() => import("./Sketches/Lines3"));
 const Continuous1 = React.lazy(() => import("./Sketches/Continuous1"));
 const Continuous2 = React.lazy(() => import("./Sketches/Continuous2"));
 const Shapes1 = React.lazy(() => import("./Sketches/Shapes1"));
+const Circle1 = React.lazy(() => import("./Sketches/Circle1"));
 
 class App extends React.Component<any, AppState> {
   constructor(props: any) {
@@ -35,7 +36,7 @@ class App extends React.Component<any, AppState> {
           <div className="right" />
         </div> */}
         <div className="App">
-          <Header />
+          <Sidebar />
           <div className="App-Sketch">
             <Suspense fallback={<div>Waiting</div>}>
               <Router>
@@ -49,6 +50,7 @@ class App extends React.Component<any, AppState> {
                 <Continuous1 path="continuous1" />
                 <Continuous2 path="continuous2" />
                 <Shapes1 path="shapes1" />
+                <Circle1 path="circle1" />
               </Router>
             </Suspense>
           </div>

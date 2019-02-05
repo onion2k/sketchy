@@ -58,16 +58,6 @@ body {
     "sidebar controls";
 }
 
-.App-Sidebar {
-  grid-area: sidebar;
-  padding: 15px;
-  background-color: #eee;
-  border-right: 1px solid black;
-  -webkit-box-shadow: 10px 0px 10px -5px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 10px 0px 10px -5px rgba(0, 0, 0, 0.25);
-  box-shadow: 10px 0px 10px -5px rgba(0, 0, 0, 0.25);
-}
-
 .App-Sketch {
   grid-area: sketch;
   align-self: center;
