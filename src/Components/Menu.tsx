@@ -12,7 +12,9 @@ export default class Menu extends React.Component<MenuProps> {
           <Link to="/">Home</Link>
         </li>
         <li className="Title">Grids</li>
-
+        <li>
+          <Link to="grid_s">Grid Simple</Link>
+        </li>
         <li>
           <Link to="grid1">Grid 1</Link>
         </li>

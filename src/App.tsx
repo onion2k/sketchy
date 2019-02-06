@@ -11,6 +11,7 @@ interface AppState {
 
 const ExtendedSketch = React.lazy(() => import("./Sketches/extSketch"));
 const Grid1 = React.lazy(() => import("./Sketches/Grid1"));
+const Grid_simple = React.lazy(() => import("./Sketches/Grid_simple"));
 const Lines1 = React.lazy(() => import("./Sketches/Lines1"));
 const Lines2 = React.lazy(() => import("./Sketches/Lines2"));
 const Lines3 = React.lazy(() => import("./Sketches/Lines3"));
@@ -44,6 +45,7 @@ class App extends React.Component<any, AppState> {
                 <Sketch path="sketch" />
                 <ExtendedSketch path="extendedSketch" />
                 <Grid1 path="grid1" />
+                <Grid_simple path="grid_s" />
                 <Lines1 path="lines1" />
                 <Lines2 path="lines2" />
                 <Lines3 path="lines3" />
