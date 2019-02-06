@@ -29,8 +29,8 @@ export default class Sketch extends React.Component<SketchProps, SketchState> {
   constructor(props?: any) {
     super(props);
     this.state = {
-      width: 400,
-      height: 400,
+      width: 300,
+      height: 300,
       canvasElementRef: this.canvasElementRef,
       context: null
     };

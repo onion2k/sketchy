@@ -27,7 +27,7 @@ export default class Grid1 extends Sketch {
         const y = Math.floor(counter / v);
 
         context.beginPath();
-        context.arc(x * rx + rx * 0.5, y * ry + ry * 0.5, 5, 0, Math.PI * 2);
+        context.arc(x * rx + rx * 0.5, y * ry + ry * 0.5, 3, 0, Math.PI * 2);
         context.fill();
       }
     }
