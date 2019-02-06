@@ -51,7 +51,7 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 75vh 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-row-gap: 30px;
   grid-template-areas:
     "sidebar sketch"

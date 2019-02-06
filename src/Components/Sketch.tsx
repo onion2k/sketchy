@@ -8,6 +8,8 @@ interface SketchProps extends RouteComponentProps {
 }
 
 interface SketchState {
+  width: number;
+  height: number;
   canvasElementRef: RefObject<HTMLCanvasElement>;
   context: CanvasRenderingContext2D | null;
 }
@@ -27,6 +29,8 @@ export default class Sketch extends React.Component<SketchProps, SketchState> {
   constructor(props?: any) {
     super(props);
     this.state = {
+      width: 400,
+      height: 400,
       canvasElementRef: this.canvasElementRef,
       context: null
     };
@@ -38,7 +42,7 @@ export default class Sketch extends React.Component<SketchProps, SketchState> {
     const { context } = options;
     if (context) {
       context.fillStyle = "rgb(192,255,255)";
-      context.fillRect(0, 0, 800, 800);
+      context.fillRect(0, 0, this.state.width, this.state.height);
     }
   }
   loop() {
@@ -46,8 +50,8 @@ export default class Sketch extends React.Component<SketchProps, SketchState> {
     if (this.state.context) {
       this.draw({
         context: this.state.context,
-        width: 800,
-        height: 800,
+        width: this.state.width,
+        height: this.state.height,
         frame: this.frame,
         image: this.state.canvasElementRef.current
       });
@@ -57,8 +61,8 @@ export default class Sketch extends React.Component<SketchProps, SketchState> {
   componentDidMount() {
     const canvasElement = this.canvasElementRef.current;
     if (canvasElement) {
-      canvasElement.width = 800;
-      canvasElement.height = 800;
+      canvasElement.width = this.state.width;
+      canvasElement.height = this.state.height;
       this.setState({ context: canvasElement.getContext("2d") }, () => {
         this.requestAnimationFrameCancel = requestAnimationFrame(this.loop);
       });

@@ -9,7 +9,7 @@ export default class Menu extends React.Component<MenuProps> {
     return (
       <ul className="Menu">
         <li className="Header">
-          <Link to="/">Home</Link>
+          <Link to="/">Sketchy</Link>
         </li>
         <li className="Title">Grids</li>
         <li>
