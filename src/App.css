@@ -51,11 +51,12 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 1fr;
-  grid-row-gap: 30px;
+  grid-template-rows: 7fr 50px 6fr;
   grid-template-areas:
     "sidebar sketch"
+    "sidebar statusbar"
     "sidebar controls";
+  background-color: #cccccc;
 }
 
 .App-Sketch {
@@ -64,9 +65,19 @@ body {
   justify-self: center;
 }
 
+.App-Statusbar {
+  grid-area: statusbar;
+  background-color: #ffffff;
+  border-top: 1px solid #888888;
+  -webkit-box-shadow: 0px -10px 10px -5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px -10px 10px -5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px -10px 10px -5px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+}
+
 .App-Controls {
   grid-area: controls;
-  background-color: #f8f8f8;
+  background-color: #eeeeee;
   border-top: 1px solid #888888;
   -webkit-box-shadow: 0px -10px 10px -5px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px -10px 10px -5px rgba(0, 0, 0, 0.25);

@@ -56,6 +56,7 @@ class App extends React.Component<any, AppState> {
               </Router>
             </Suspense>
           </div>
+          <div className="App-Statusbar">Status Bar</div>
           <div className="App-Controls">Control panel</div>
         </div>
       </div>
