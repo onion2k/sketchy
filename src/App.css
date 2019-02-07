@@ -1,5 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Unica+One");
+
+:root {
+  --pinball: #d3d3d3;
+  --kettle-black: #131313;
+  --black-oak: #4f4f4f;
+  --dark-silver: #707070;
+  --spanish-grey: #989898;
+  --goshawk-grey: #444444;
+  --knights-armor: #5c5c5c;
+  --rainy-grey: #a4a4a4;
+  --more-than-a-week: #8c8c8c;
+  --dover-grey: #848484;
+}
+
 body {
   overflow: hidden;
+  background-color: var(--dover-grey);
+  font-family: "Unica One", cursive;
 }
 /*
 .loading {
@@ -51,24 +68,25 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 7fr 50px 6fr;
+  grid-template-rows: 9fr 50px 5fr;
   grid-template-areas:
     "sidebar sketch"
     "sidebar statusbar"
     "sidebar controls";
-  background-color: #cccccc;
 }
 
 .App-Sketch {
   grid-area: sketch;
   align-self: center;
   justify-self: center;
+  overflow: hidden;
 }
 
 .App-Statusbar {
   grid-area: statusbar;
-  background-color: #ffffff;
-  border-top: 1px solid #888888;
+  background-color: var(--goshawk-grey);
+  color: var(--pinball);
+  border-top: 1px solid var(--rainy-grey);
   -webkit-box-shadow: 0px -10px 10px -5px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px -10px 10px -5px rgba(0, 0, 0, 0.25);
   box-shadow: 0px -10px 10px -5px rgba(0, 0, 0, 0.25);
@@ -77,8 +95,9 @@ body {
 
 .App-Controls {
   grid-area: controls;
-  background-color: #eeeeee;
-  border-top: 1px solid #888888;
+  background-color: var(--kettle-black);
+  color: var(--pinball);
+  border-top: 1px solid var(--rainy-grey);
   -webkit-box-shadow: 0px -10px 10px -5px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px -10px 10px -5px rgba(0, 0, 0, 0.25);
   box-shadow: 0px -10px 10px -5px rgba(0, 0, 0, 0.25);
